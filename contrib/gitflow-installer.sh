@@ -2,10 +2,10 @@
 
 # git-flow make-less installer for *nix systems, by Rick Osborne
 # Based on the git-flow core Makefile:
-# http://github.com/petervanderdoes/gitflow-avh/blob/master/Makefile
+# http://github.com/willgeorgetaylor/gitflow/blob/master/Makefile
 
 # Licensed under the same restrictions as git-flow:
-# http://github.com/petervanderdoes/gitflow-avh/blob/develop/LICENSE
+# http://github.com/willgeorgetaylor/gitflow/blob/develop/LICENSE
 
 # Updated for the fork at petervanderdoes
 
@@ -28,7 +28,7 @@ if [ -z "$REPO_NAME" ] ; then
 fi
 
 if [ -z "$REPO_HOME" ] ; then
-	REPO_HOME="https://github.com/petervanderdoes/gitflow-avh.git"
+	REPO_HOME="https://github.com/willgeorgetaylor/gitflow.git"
 fi
 
 EXEC_PREFIX="$PREFIX"
@@ -37,7 +37,7 @@ DATAROOTDIR="$PREFIX/share"
 DOCDIR="$DATAROOTDIR/doc/gitflow"
 
 EXEC_FILES="git-flow"
-SCRIPT_FILES="git-flow-init git-flow-feature git-flow-bugfix git-flow-hotfix git-flow-release git-flow-support git-flow-version gitflow-common gitflow-shFlags git-flow-config"
+SCRIPT_FILES="git-flow-init git-flow-feature git-flow-chore git-flow-bugfix git-flow-hotfix git-flow-release git-flow-support git-flow-version gitflow-common gitflow-shFlags git-flow-config"
 HOOK_FILES="$REPO_NAME/hooks/*"
 
 
