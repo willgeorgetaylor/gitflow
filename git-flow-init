@@ -68,6 +68,7 @@ d,[no]defaults      Use default branch naming conventions
 f,[no]force         Force setting of gitflow branches, even if already configured
 
 p,feature!          Feature branches
+c,chore!            Chore branches
 b,bugfix!           Bugfix branches
 r,release!          Release branches
 x,hotfix!           Hotfix branches
@@ -91,6 +92,7 @@ file=    use given config file
 	DEFINE_boolean 'system' false 'use system config file'
 	DEFINE_string 'file' "" 'use given config file'
 	DEFINE_string 'feature' "" 'feature branches' p
+	DEFINE_string 'chore' "" 'chore branches' c
 	DEFINE_string 'bugfix' "" 'bugfix branches' b
 	DEFINE_string 'release' "" 'release branches' r
 	DEFINE_string 'hotfix' "" 'hotfix branches' x
@@ -295,6 +297,7 @@ file=    use given config file
 	# Ask the user for naming conventions (branch and tag prefixes )
 	if flag force || \
 		! git config --get gitflow.prefix.feature >/dev/null 2>&1 ||
+		! git config --get gitflow.prefix.chore >/dev/null 2>&1 ||
 		! git config --get gitflow.prefix.bugfix >/dev/null 2>&1 ||
 		! git config --get gitflow.prefix.release >/dev/null 2>&1 ||
 		! git config --get gitflow.prefix.hotfix >/dev/null 2>&1 ||
@@ -319,6 +322,23 @@ file=    use given config file
 		fi
 		[ "$answer" = "-" ] && prefix= || prefix=${answer:-$default_suggestion}
 		git_do config $gitflow_config_option gitflow.prefix.feature "$prefix"
+	fi
+
+	# Chore branches
+	if ! git config --get gitflow.prefix.chore >/dev/null 2>&1 || flag force; then
+	    if [ "$FLAGS_chore" != "" ]; then
+	        default_suggestion=$(echo $FLAGS_chore)
+        else
+	    	default_suggestion=$(git config --get --system gitflow.prefix.chore || git config --get --global gitflow.prefix.chore || echo chore/)
+        fi
+		printf "Chore branches? [$default_suggestion] "
+		if noflag defaults; then
+			read answer
+		else
+			printf "\n"
+		fi
+		[ "$answer" = "-" ] && prefix= || prefix=${answer:-$default_suggestion}
+		git_do config $gitflow_config_option gitflow.prefix.chore "$prefix"
 	fi
 
 	# Bugfix branches
