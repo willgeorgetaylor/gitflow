@@ -47,23 +47,6 @@ Starting with version 1.0, the project uses the following scheme:
 \<MAJOR\>.\<MINOR\>.\<REVISION\>\
 * AVH is the acronym of "A VirtualHome"
 
-## Please help out
-
-This project is under constant development. Feedback and suggestions are very
-welcome and I encourage you to use the [Issues
-list](http://github.com/petervanderdoes/gitflow-avh/issues) on Github to provide that
-feedback.
-
-Feel free to fork this repository and to commit your additions. For a list of
-all contributors, please see the [AUTHORS](AUTHORS) file.
-
-Any questions, tips, or general discussion can be posted to the Google group:
-[http://groups.google.com/group/gitflow-users](http://groups.google.com/group/gitflow-users)
-This is the original group set up to support the nvie branch, but I am monitoring
-the list as well for any questions related to my version.
-When you do post a question on the list please indicate which version you are,
-using the complete version number.
-
 ## Contributing
 
 Fork the repository.  Then, run:
@@ -120,7 +103,7 @@ The ``-d`` flag will accept all defaults.
 
 ![Screencast git flow init](http://i.imgur.com/lFQbY5V.gif)
 
-### Creating feature/release/hotfix/support branches
+### Creating feature/chore/release/hotfix/support branches
 
 * To list/start/finish/delete feature branches, use:
 
@@ -138,6 +121,15 @@ git flow feature delete <name>
 ```shell
 git flow feature publish <name>
 git flow feature track <name>
+```
+
+* To list/start/finish/delete chore branches, use:
+
+```shell
+git flow chore
+git flow chore start <name> [<base>]
+git flow chore finish <name>
+git flow chore delete <name>
 ```
 
 * To list/start/finish/delete release branches, use:
@@ -230,15 +222,3 @@ For a wide variety of commands hooks or filters can be called before and after
 the command.  
 The files should be placed in .git/hooks  
 In the directory hooks you can find examples of all the hooks available.
-
-## Showing your appreciation
-
-Of course, the best way to show your appreciation for the git-flow tool itself
-remains contributing to the community.  If you'd like to show your appreciation
-in another way, however, consider donating through PayPal:
-
-[![PayPal][2]][1]
-
-[1]: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=S85FXJ9EBHAF2&lc=US&item_name=gitflow&item_number=gitflow&no_note=0&cn=Add%20special%20instructions%20to%20the%20seller&no_shipping=1&rm=1&return=https%3a%2f%2fgithub%2ecom%2fpetervanderdoes%2fgitflow&cancel_return=https%3a%2f%2fgithub%2ecom%2fpetervanderdoes%2fgitflow&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted
-
-[2]: https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif
