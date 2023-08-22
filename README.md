@@ -24,7 +24,7 @@ A quick cheatsheet was made by Daniel Kummer:
 
 ## Installing git-flow
 
-See the Wiki for up-to-date [Installation Instructions](https://github.com/petervanderdoes/gitflow-avh/wiki/Installation).
+See the Wiki for up-to-date [Installation Instructions](https://github.com/willgeorgetaylor/gitflow/wiki/Installation).
 
 
 ## Integration with your shell
@@ -40,7 +40,7 @@ for the commands not found in the original git-flow.
 
 ## FAQ
 
-* See the [FAQ](http://github.com/petervanderdoes/gitflow-avh/wiki/FAQ) section
+* See the [FAQ](http://github.com/willgeorgetaylor/gitflow/wiki/FAQ) section
 of the project Wiki.
 * Version Numbering Scheme.  
 Starting with version 1.0, the project uses the following scheme:
